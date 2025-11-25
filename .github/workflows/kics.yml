@@ -14,12 +14,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run KICS Scan
-        uses: checkmarx/kics-github-action@v1.7
+      - name: Run KICS
+        uses: checkmarx/kics-action@v1.7
         with:
           path: .
           output_path: kics-results
-          output_formats: 'sarif'
+          output_formats: "sarif"
           fail_on: high
 
       - name: Upload SARIF to GitHub
